@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::prefix('/member')->group(function () {
+    Route::get('/', [MemberController::class, 'index']);
     Route::post('/register', [MemberController::class, 'store']);
     Route::post('/login', [MemberController::class, 'login']);
 });

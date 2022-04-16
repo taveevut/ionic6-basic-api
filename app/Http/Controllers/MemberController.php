@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
+    public function index(Request $request)
+    {
+        $result = Member::all();
+
+        return response()->json($result);
+    }
+
     public function store(Request $request)
     {
         $result = Member::create($request->all());
