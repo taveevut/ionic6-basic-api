@@ -22,4 +22,6 @@ Route::prefix('/member')->group(function () {
     Route::get('/', [MemberController::class, 'index']);
     Route::post('/register', [MemberController::class, 'store']);
     Route::post('/login', [MemberController::class, 'login']);
+    Route::get('/login/profile/{id}', [MemberController::class, 'getProfile']);
+    Route::put('/login/profile/{id}', [MemberController::class, 'updateProfile']);
 });

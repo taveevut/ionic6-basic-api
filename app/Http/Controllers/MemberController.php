@@ -29,4 +29,18 @@ class MemberController extends Controller
 
         return response()->json($result);
     }
+
+    public function getProfile($id)
+    {
+        $result = Member::find($id)->first();
+
+        return response()->json($result);
+    }
+
+    public function updateProfile(Request $request, $id)
+    {
+        $result = Member::find($id)->update($request->all());
+
+        return response()->json($result);
+    }
 }
